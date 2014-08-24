@@ -8,6 +8,18 @@ target/
 *.class
 
 #################################
+# IDE generated files           #
+#################################
+.settings/
+.classpath
+.project
+nbproject/private/
+nbbuild/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+#################################
 # Logs and temp files           #
 #################################
 *.log
