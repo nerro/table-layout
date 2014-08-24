@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>info.clearthought</groupId>
+  <artifactId>table-layout</artifactId>
+  <version>4.2-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>TableLayout</name>
+  <description>A simple and powerful layout manager, an alternative to GridBagLayout.</description>
+
+  <licenses>
+    <license>
+      <name>The Clearthought Software License, Version 2.0</name>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>dbarbalace</id>
+      <name>Daniel Barbalace</name>
+      <url>http://www.clearthought.info</url>
+      <roles>
+        <role>initial author</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>nerro</id>
+      <name>Pavel Sorokin</name>
+      <email>pavel.sorokin@nerro.eu</email>
+      <url>https://nerro.eu</url>
+      <roles>
+        <role>developer</role>
+        <role>maintainer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id></id>
+    </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
