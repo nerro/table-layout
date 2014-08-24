@@ -1,6 +1,8 @@
 TableLayout - An Alternative to GridBagLayout
 =============================================
 
+[![Build Status](https://travis-ci.org/nerro/table-layout.svg?branch=master)](https://travis-ci.org/nerro/table-layout)
+
 This project is a mirror of the great and powerful layout manager TableLayout by Daniel Barbalace.
 
 
