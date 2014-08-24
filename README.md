@@ -5,6 +5,8 @@ TableLayout - An Alternative to GridBagLayout
 
 This project is a mirror of the great and powerful layout manager TableLayout by Daniel Barbalace.
 
+Javadoc for this project is available under http://nerro.github.io/table-layout.
+
 
 Preface
 -------
