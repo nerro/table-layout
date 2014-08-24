@@ -43,9 +43,12 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <target.directory>target</target.directory>
   </properties>
 
   <build>
+    <outputDirectory>${basedir}/${target.directory}/classes</outputDirectory>
+    <testOutputDirectory>${basedir}/${target.directory}/test-classes</testOutputDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -58,5 +61,16 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <!-- configure Eclipse to use separate output folders for Maven projects, -->
+    <!-- so it won't interfere with Maven build run from the command line     -->
+    <profile>
+      <id>eclipse</id>
+      <properties>
+        <target.directory>build</target.directory>
+      </properties>
+    </profile>
+  </profiles>
 
 </project>
