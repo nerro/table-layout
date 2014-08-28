@@ -17,6 +17,11 @@
     </license>
   </licenses>
 
+  <scm>
+    <url>https://github.com/nerro/table-layout</url>
+    <connection>scm:git:git@github.com:nerro/table-layout.git</connection>
+  </scm>
+
   <developers>
     <developer>
       <id>dbarbalace</id>
