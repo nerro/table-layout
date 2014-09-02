@@ -7,6 +7,14 @@ This project is a mirror of the great and powerful layout manager TableLayout by
 
 Javadoc for this project is available under http://nerro.github.io/table-layout.
 
+Maven coordinates:
+
+    <dependency>
+      <groupId>info.clearthought</groupId>
+      <artifactId>table-layout</artifactId>
+      <version>4.2</version>
+    </dependency>
+
 
 Preface
 -------
