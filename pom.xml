@@ -42,9 +42,6 @@
         <role>maintainer</role>
       </roles>
     </developer>
-    <developer>
-      <id></id>
-    </developer>
   </developers>
 
   <properties>
