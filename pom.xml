@@ -58,8 +58,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
       <plugin>
@@ -88,9 +88,9 @@
       </properties>
     </profile>
 
-    <!-- set java compatibility mode to 1.5 (jdk5), -->
+    <!-- set java compatibility mode to 1.6 (jdk6), -->
     <profile>
-      <id>jdk5</id>
+      <id>jdk6</id>
       <build>
         <plugins>
           <plugin>
@@ -98,8 +98,8 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.1</version>
             <configuration>
-              <source>1.5</source>
-              <target>1.5</target>
+              <source>1.6</source>
+              <target>1.6</target>
             </configuration>
           </plugin>
         </plugins>
