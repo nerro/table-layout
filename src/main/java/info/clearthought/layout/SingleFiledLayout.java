@@ -1,6 +1,11 @@
 package info.clearthought.layout;
 
-import java.awt.*;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Insets;
+import java.awt.LayoutManager;
+import java.io.Serializable;
 
 /**
  * SingleFiledLayout lays out components singled filed. This layout manager is like FlowLayout except that all
@@ -9,7 +14,7 @@ import java.awt.*;
  * @version 1.1 April 4, 2002
  * @author Daniel E. Barbalace
  */
-public class SingleFiledLayout implements java.awt.LayoutManager, java.io.Serializable {
+public class SingleFiledLayout implements LayoutManager, Serializable {
   /** Align components in a column */
   public static final int COLUMN = 0;
 
@@ -97,6 +102,7 @@ public class SingleFiledLayout implements java.awt.LayoutManager, java.io.Serial
    *
    * @param container container being served by this layout manager
    */
+  @Override
   public void layoutContainer(Container container) {
     // Use preferred size to get maximum width or height
     Dimension size = container.getSize();
@@ -188,6 +194,7 @@ public class SingleFiledLayout implements java.awt.LayoutManager, java.io.Serial
    *
    * @return a dimension indicating the container's preferred size
    */
+  @Override
   public Dimension preferredLayoutSize(Container container) {
     int totalWidth = 0; // Width of all components
     int totalHeight = 0; // Height of all components
@@ -243,6 +250,7 @@ public class SingleFiledLayout implements java.awt.LayoutManager, java.io.Serial
    *
    * @return a dimension indicating the container's minimum size
    */
+  @Override
   public Dimension minimumLayoutSize(Container container) {
     int totalWidth = 0; // Width of all components
     int totalHeight = 0; // Height of all components
@@ -295,6 +303,7 @@ public class SingleFiledLayout implements java.awt.LayoutManager, java.io.Serial
    * @param name dummy parameter
    * @param component component to add
    */
+  @Override
   public void addLayoutComponent(String name, Component component) {}
 
   /**
@@ -302,5 +311,6 @@ public class SingleFiledLayout implements java.awt.LayoutManager, java.io.Serial
    *
    * @param component component being removed
    */
+  @Override
   public void removeLayoutComponent(Component component) {}
 }
