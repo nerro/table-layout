@@ -1,7 +1,7 @@
 TableLayout - An Alternative to GridBagLayout
 =============================================
 
-[![Build Status](https://travis-ci.org/nerro/table-layout.svg?branch=master)](https://travis-ci.org/nerro/table-layout)
+[![Build Status](https://travis-ci.org/nerro/table-layout.svg?branch=master)](https://travis-ci.org/nerro/table-layout)  [![Maven Central](https://maven-badges.herokuapp.com/maven-central/info.clearthought/table-layout/badge.svg)](https://maven-badges.herokuapp.com/maven-central/info.clearthought/table-layout)
 
 This project is a mirror of the great and powerful layout manager TableLayout by Daniel Barbalace.
 
