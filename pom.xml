@@ -23,9 +23,17 @@
   </prerequisites>
 
   <scm>
-    <url>https://github.com/nerro/table-layout</url>
-    <connection>scm:git:git@github.com:nerro/table-layout.git</connection>
+    <url>https://github.com/${github.repo}</url>
+    <connection>scm:git:git@github.com:${github.repo}.git</connection>
   </scm>
+  <ciManagement>
+    <system>Travis-CI</system>
+    <url>https://travis-ci.org/${github.repo}</url>
+  </ciManagement>
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/${github.repo}/issues</url>
+  </issueManagement>
 
   <developers>
     <developer>
@@ -51,6 +59,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <target.directory>target</target.directory>
+    <github.repo>nerro/table-layout</github.repo>
   </properties>
 
   <build>
