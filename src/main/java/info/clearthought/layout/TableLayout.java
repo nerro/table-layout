@@ -231,6 +231,8 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
    * eliminates redundancy. Also, for ease of reading, z always indicates a parameter whose value is either C or R.
    */
 
+  private static final long serialVersionUID = -4330695726934191524L;
+
   /** Default row/column size */
   protected static final double defaultSize[][] = { {}, {}};
 

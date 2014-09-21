@@ -15,6 +15,8 @@ import java.io.Serializable;
  * @author Daniel E. Barbalace
  */
 public class SingleFiledLayout implements LayoutManager, Serializable {
+  private static final long serialVersionUID = -6272984621856402492L;
+
   /** Align components in a column */
   public static final int COLUMN = 0;
 
