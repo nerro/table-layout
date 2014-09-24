@@ -9,6 +9,7 @@ import java.awt.LayoutManager2;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 
 
@@ -264,7 +265,7 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
   protected int crOffset[][] = {null, null};
 
   /** List of components and their sizes */
-  protected LinkedList list;
+  protected LinkedList<Entry> list;
 
   /**
    * Indicates whether or not the size of the cells are known for the last known size of the container. If dirty is true
@@ -353,7 +354,7 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
       }
 
     // Create an empty list of components
-    list = new LinkedList();
+    list = new LinkedList<>();
 
     // Indicate that the cell sizes are not known
     dirty = true;
@@ -368,10 +369,10 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
    *         null or is not found, null is returned.
    */
   public TableLayoutConstraints getConstraints(Component component) {
-    ListIterator iterator = list.listIterator(0);
+    ListIterator<Entry> iterator = list.listIterator(0);
 
     while (iterator.hasNext()) {
-      Entry entry = (Entry) iterator.next();
+      Entry entry = iterator.next();
 
       if (entry.component == component)
         return new TableLayoutConstraints(entry.cr1[C], entry.cr1[R], entry.cr2[C], entry.cr2[R], entry.alignment[C],
@@ -395,10 +396,10 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
       throw new IllegalArgumentException("Parameter constraint cannot be null.");
 
     // Find and update constraints for the given component
-    ListIterator iterator = list.listIterator(0);
+    ListIterator<Entry> iterator = list.listIterator(0);
 
     while (iterator.hasNext()) {
-      Entry entry = (Entry) iterator.next();
+      Entry entry = iterator.next();
 
       if (entry.component == component)
         iterator.set(new Entry(component, constraint));
@@ -725,11 +726,11 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
     crSpec[z] = cr;
 
     // Move all components that are below the new cr
-    ListIterator iterator = list.listIterator(0);
+    ListIterator<Entry> iterator = list.listIterator(0);
 
     while (iterator.hasNext()) {
       // Get next entry
-      Entry entry = (Entry) iterator.next();
+      Entry entry = iterator.next();
 
       // Is the first cr below the new cr
       if (entry.cr1[z] >= i)
@@ -794,11 +795,11 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
     crSpec[z] = cr;
 
     // Move all components that are to below the row deleted
-    ListIterator iterator = list.listIterator(0);
+    ListIterator<Entry> iterator = list.listIterator(0);
 
     while (iterator.hasNext()) {
       // Get next entry
-      Entry entry = (Entry) iterator.next();
+      Entry entry = iterator.next();
 
       // Is the first row below the new row
       if (entry.cr1[z] > i)
@@ -854,7 +855,7 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
    *
    * @see #getOverlappingEntry
    */
-  public java.util.List getInvalidEntry() {
+  public List getInvalidEntry() {
     LinkedList listInvalid = new LinkedList();
 
     try {
@@ -883,7 +884,7 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
    *
    * @see #getInvalidEntry
    */
-  public java.util.List getOverlappingEntry() {
+  public List getOverlappingEntry() {
     LinkedList listOverlapping = new LinkedList();
 
     try {
@@ -1096,10 +1097,10 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
 
         // Find maximum preferred/min width of all components completely
         // or partially contained within this cr
-        ListIterator iterator = list.listIterator(0);
+        ListIterator<Entry> iterator = list.listIterator(0);
 
         nextComponent: while (iterator.hasNext()) {
-          Entry entry = (Entry) iterator.next();
+          Entry entry = iterator.next();
 
           // Skip invalid entries
           if ((entry.cr1[z] < 0) || (entry.cr2[z] >= numCr))
@@ -1209,11 +1210,11 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
     for (int counter = 0; counter < component.length; counter++) {
       try {
         // Get the entry for the next component
-        ListIterator iterator = list.listIterator(0);
+        ListIterator<Entry> iterator = list.listIterator(0);
         Entry entry = null;
 
         while (iterator.hasNext()) {
-          entry = (Entry) iterator.next();
+          entry = iterator.next();
 
           if (entry.component == component[counter])
             break;
@@ -1659,10 +1660,10 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
   @Override
   public void removeLayoutComponent(Component component) {
     // Remove the component
-    ListIterator iterator = list.listIterator(0);
+    ListIterator<Entry> iterator = list.listIterator(0);
 
     while (iterator.hasNext()) {
-      Entry entry = (Entry) iterator.next();
+      Entry entry = iterator.next();
 
       if (entry.component == component)
         iterator.remove();
