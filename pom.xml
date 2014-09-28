@@ -91,6 +91,15 @@
     </plugins>
   </build>
 
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
   <profiles>
     <!-- configure Eclipse to use separate output folders for Maven projects, -->
     <!-- so it won't interfere with Maven build run from the command line     -->
