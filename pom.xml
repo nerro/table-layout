@@ -9,7 +9,7 @@
 
   <name>TableLayout</name>
   <description>A simple and powerful layout manager, an alternative to GridBagLayout.</description>
-  <url>https://github.com/nerro/table-layout</url>
+  <url>https://github.com/${github.repo}</url>
 
   <licenses>
     <license>
