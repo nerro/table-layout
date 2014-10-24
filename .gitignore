@@ -18,6 +18,9 @@ nbbuild/
 nbdist/
 nbactions.xml
 nb-configuration.xml
+.idea/
+*.iws
+*.iml
 
 #################################
 # Logs and temp files           #
