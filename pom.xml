@@ -58,35 +58,96 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.sourceCompatibility>1.7</project.sourceCompatibility>
+    <project.targetCompatibility>1.7</project.targetCompatibility>
     <target.directory>target</target.directory>
     <github.repo>nerro/table-layout</github.repo>
+
+    <version.maven.clean.plugin>2.6</version.maven.clean.plugin>
+    <version.maven.compiler.plugin>3.1</version.maven.compiler.plugin>
+    <version.maven.deploy.plugin>2.8.2</version.maven.deploy.plugin>
+    <version.maven.jar.plugin>2.5</version.maven.jar.plugin>
+    <version.maven.javadoc.plugin>2.9.1</version.maven.javadoc.plugin>
+    <version.maven.install.plugin>2.5.2</version.maven.install.plugin>
+    <version.maven.resources.plugin>2.7</version.maven.resources.plugin>
+    <version.maven.site.plugin>3.4</version.maven.site.plugin>
+    <version.maven.surefire.plugin>2.17</version.maven.surefire.plugin>
+
+    <!--
+      Dependency versions. Please keep alphabetical.
+      Each version property should be of the form "version.<groupId>".
+    -->
+    <version.junit>4.11</version.junit>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${version.junit}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <outputDirectory>${basedir}/${target.directory}/classes</outputDirectory>
     <testOutputDirectory>${basedir}/${target.directory}/test-classes</testOutputDirectory>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${version.maven.clean.plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${version.maven.compiler.plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${version.maven.jar.plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${version.maven.surefire.plugin}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>${project.sourceCompatibility}</source>
+          <target>${project.targetCompatibility}</target>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.14.1</version>
         <configuration>
           <parallel>classes</parallel>
+          <reuseForks>true</reuseForks>
+          <useUnlimitedThreads>true</useUnlimitedThreads>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.5</version>
         <configuration>
           <archive>
             <manifestEntries>
@@ -98,15 +159,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
 
   <profiles>
     <!-- configure Eclipse to use separate output folders for Maven projects, -->
@@ -126,7 +178,6 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.1</version>
             <configuration>
               <source>1.6</source>
               <target>1.6</target>
