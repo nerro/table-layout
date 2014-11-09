@@ -211,6 +211,11 @@
     <!-- set java compatibility mode to 1.6 (jdk6), -->
     <profile>
       <id>jdk6</id>
+      <activation>
+        <property>
+          <name>JDK6</name>
+        </property>
+      </activation>
       <build>
         <plugins>
           <plugin>
