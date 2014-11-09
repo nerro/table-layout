@@ -354,7 +354,7 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
       }
 
     // Create an empty list of components
-    list = new LinkedList<>();
+    list = new LinkedList<Entry>();
 
     // Indicate that the cell sizes are not known
     dirty = true;
