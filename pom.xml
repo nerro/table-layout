@@ -171,6 +171,7 @@
         <configuration>
           <source>${project.sourceCompatibility}</source>
           <target>${project.targetCompatibility}</target>
+          <compilerArgument>-Xlint:unchecked</compilerArgument>
         </configuration>
       </plugin>
       <plugin>
