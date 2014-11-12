@@ -101,9 +101,6 @@
   </dependencies>
 
   <build>
-    <outputDirectory>${basedir}/${target.directory}/classes</outputDirectory>
-    <testOutputDirectory>${basedir}/${target.directory}/test-classes</testOutputDirectory>
-
     <pluginManagement>
       <plugins>
         <plugin>
@@ -199,16 +196,7 @@
   </build>
 
   <profiles>
-    <!-- configure Eclipse to use separate output folders for Maven projects, -->
-    <!-- so it won't interfere with Maven build run from the command line     -->
-    <profile>
-      <id>eclipse</id>
-      <properties>
-        <target.directory>build</target.directory>
-      </properties>
-    </profile>
-
-    <!-- set java compatibility mode to 1.6 (jdk6), -->
+    <!-- set java compatibility mode to 1.6 (jdk6) -->
     <profile>
       <id>jdk6</id>
       <activation>
