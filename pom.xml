@@ -2,7 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>info.clearthought</groupId>
+  <parent>
+    <groupId>info.clearthought</groupId>
+    <artifactId>table-layout-parent</artifactId>
+    <version>1</version>
+  </parent>
+
   <artifactId>table-layout</artifactId>
   <version>4.2.2-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -10,13 +15,6 @@
   <name>TableLayout</name>
   <description>A simple and powerful layout manager, an alternative to GridBagLayout.</description>
   <url>https://github.com/${github.repo}</url>
-
-  <licenses>
-    <license>
-      <name>The Clearthought Software License, Version 2.0</name>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
 
   <prerequisites>
     <maven>3.2</maven>
@@ -34,13 +32,6 @@
     <system>GitHub Issues</system>
     <url>https://github.com/${github.repo}/issues</url>
   </issueManagement>
-  <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
 
   <developers>
     <developer>
@@ -64,27 +55,11 @@
   </developers>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.sourceCompatibility>1.7</project.sourceCompatibility>
-    <project.targetCompatibility>1.7</project.targetCompatibility>
-    <target.directory>target</target.directory>
     <github.repo>nerro/table-layout</github.repo>
 
-    <version.maven.clean.plugin>2.6</version.maven.clean.plugin>
-    <version.maven.compiler.plugin>3.1</version.maven.compiler.plugin>
-    <version.maven.deploy.plugin>2.8.2</version.maven.deploy.plugin>
-    <version.maven.gpg.plugin>1.5</version.maven.gpg.plugin>
-    <version.maven.jar.plugin>2.5</version.maven.jar.plugin>
-    <version.maven.javadoc.plugin>2.9.1</version.maven.javadoc.plugin>
-    <version.maven.install.plugin>2.5.2</version.maven.install.plugin>
-    <version.maven.resources.plugin>2.7</version.maven.resources.plugin>
-    <version.maven.site.plugin>3.4</version.maven.site.plugin>
-    <version.maven.source.plugin>2.3</version.maven.source.plugin>
-    <version.maven.surefire.plugin>2.17</version.maven.surefire.plugin>
-
     <!--
-      Dependency versions. Please keep alphabetical.
-      Each version property should be of the form "version.<groupId>".
+     | Dependency versions. Please keep alphabetical.
+     | Each version property should be of the form "version.<groupId>".
     -->
     <version.junit>4.11</version.junit>
   </properties>
@@ -108,85 +83,7 @@
   </dependencies>
 
   <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>${version.maven.clean.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${version.maven.compiler.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>${version.maven.deploy.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-gpg-plugin</artifactId>
-          <version>${version.maven.gpg.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>${version.maven.jar.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${version.maven.javadoc.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>${version.maven.install.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>${version.maven.resources.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>${version.maven.site.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-source-plugin</artifactId>
-          <version>${version.maven.source.plugin}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>${version.maven.surefire.plugin}</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>${project.sourceCompatibility}</source>
-          <target>${project.targetCompatibility}</target>
-          <compilerArgument>-Xlint:unchecked</compilerArgument>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <parallel>classes</parallel>
-          <reuseForks>true</reuseForks>
-          <useUnlimitedThreads>true</useUnlimitedThreads>
-        </configuration>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -220,52 +117,6 @@
               <source>1.6</source>
               <target>1.6</target>
             </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <!-- generate javadoc and source jars with signing components with GPG -->
-    <profile>
-      <id>release</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar-no-fork</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
           </plugin>
         </plugins>
       </build>
