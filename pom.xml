@@ -91,7 +91,7 @@
           <archive>
             <manifestEntries>
               <Built-By>nerro</Built-By>
-              <Github-Url>${project.scm.url}</Github-Url>
+              <GitHub-Url>${project.scm.url}</GitHub-Url>
             </manifestEntries>
           </archive>
         </configuration>
