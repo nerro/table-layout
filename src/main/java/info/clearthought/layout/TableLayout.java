@@ -855,18 +855,18 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
    *
    * @see #getOverlappingEntry
    */
-  public List getInvalidEntry() {
-    LinkedList listInvalid = new LinkedList();
+  public List<Entry> getInvalidEntry() {
+    LinkedList<Entry> listInvalid = new LinkedList<Entry>();
 
     try {
-      ListIterator iterator = list.listIterator(0);
+      ListIterator<Entry> iterator = list.listIterator(0);
 
       while (iterator.hasNext()) {
         Entry entry = (Entry) iterator.next();
 
         if ((entry.cr1[R] < 0) || (entry.cr1[C] < 0) || (entry.cr2[R] >= crSpec[R].length)
             || (entry.cr2[C] >= crSpec[C].length)) {
-          listInvalid.add(entry.copy());
+          listInvalid.add((Entry)entry.copy());
         }
       }
     } catch (CloneNotSupportedException error) {
@@ -884,8 +884,8 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
    *
    * @see #getInvalidEntry
    */
-  public List getOverlappingEntry() {
-    LinkedList listOverlapping = new LinkedList();
+  public List<Entry> getOverlappingEntry() {
+    LinkedList<Entry> listOverlapping = new LinkedList<Entry>();
 
     try {
       // Count constraints
@@ -907,7 +907,7 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
               || ((entry[checking].cr2[C] >= entry[knowUnique].cr1[C])
                   && (entry[checking].cr2[C] <= entry[knowUnique].cr2[C])
                   && (entry[checking].cr2[R] >= entry[knowUnique].cr1[R]) && (entry[checking].cr2[R] <= entry[knowUnique].cr2[R]))) {
-            listOverlapping.add(entry[checking].copy());
+            listOverlapping.add((Entry)entry[checking].copy());
           }
     } catch (CloneNotSupportedException error) {
       throw new RuntimeException("Unexpected CloneNotSupportedException");
