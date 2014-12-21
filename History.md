@@ -1,6 +1,13 @@
 ## HEAD
 
 
+## 4.2.2 / 2014-12-21
+
+### Minor Enhancements ###
+  * Fix all compile warnings (#12)
+  * Extract meta inf from POM into parent POM (#9)
+
+
 ## 4.2.1 / 2014-11-14
 
 ### Minor Enhancements ###
