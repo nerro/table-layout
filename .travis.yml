@@ -4,5 +4,6 @@ language: java
 jdk:
   - oraclejdk7
 env:
+  - JDK5
   - JDK6
   - JDK7
