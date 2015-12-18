@@ -100,6 +100,27 @@
   </build>
 
   <profiles>
+    <!-- set java compatibility mode to 1.5 (jdk5) -->
+    <profile>
+      <id>jdk5</id>
+      <activation>
+        <property>
+          <name>JDK5</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <source>1.5</source>
+              <target>1.5</target>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <!-- set java compatibility mode to 1.6 (jdk6) -->
     <profile>
       <id>jdk6</id>
