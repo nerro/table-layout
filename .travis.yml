@@ -7,3 +7,11 @@ env:
   - JDK5
   - JDK6
   - JDK7
+
+# execute maven command with debug output to track profile and -source and -target level
+before_script:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -X
+
+# run test suite
+script:
+  - mvn test -B
