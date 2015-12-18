@@ -4,10 +4,14 @@ language: java
 jdk:
   - oraclejdk7
 env:
-  - JDK5
-  - JDK6
-  - JDK7
+  - COMPILER_LEVEL=JDK5
+  - COMPILER_LEVEL=JDK6
+  - COMPILER_LEVEL=JDK7
 
 # execute maven command with debug output to track profile and -source and -target level
 install:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -X
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -X -D$COMPILER_LEVEL
+
+# run test suite
+script:
+  - mvn test -B -D$COMPILER_LEVEL
