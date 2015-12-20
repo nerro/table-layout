@@ -9,7 +9,7 @@
   </parent>
 
   <artifactId>table-layout</artifactId>
-  <version>4.3.0</version>
+  <version>4.3.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>TableLayout</name>
