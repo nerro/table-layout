@@ -1,6 +1,14 @@
 ## HEAD
 
 
+## 4.3.0 / 2015-12-20
+
+### Minor Enhancements ###
+  * Change java compile level to 1.5 (#16)
+  * Fix errors when building javadocs (#20)
+  * Fix Travis-CI configuration (#17)
+
+
 ## 4.2.2 / 2014-12-21
 
 ### Minor Enhancements ###
