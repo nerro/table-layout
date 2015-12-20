@@ -123,7 +123,7 @@ import java.util.ListIterator;
  * constraints must be violated. Since TableLayout is a complete, general Cartesian layout manager, it would be possible
  * to specify conflicting constraints if a <code>MAXIMUM
  * </code> constant existed.
- * <p>
+ * </p>
  * 
  * <p>
  * Second, the ability to make a component grow up to a maximum size is primarily of interest to layout managers like
@@ -145,61 +145,61 @@ import java.util.ListIterator;
  * import java.awt.*;
  * import javax.swing.*;
  * import info.clearthought.layout.TableLayout;
- * <spc>
+ *
  * public class Preferred extends JFrame
  * {
- * <spc>
+ *
  *     public static void main (String args[])
  *     {
  *         new Preferred();
  *     }
- * <spc>
+ *
  *     public Preferred ()
  *     {
  *         super("The Power of Preferred Sizes");
  *         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  *         Container pane = getContentPane();
- * <spc>
+ *
  *         // b - border
  *         // f - FILL
  *         // p - PREFERRED
  *         // vs - vertical space between labels and text fields
  *         // vg - vertical gap between form elements
  *         // hg - horizontal gap between form elements
- * <spc>
+ *
  *         double b = 10;
  *         double f = TableLayout.FILL;
  *         double p = TableLayout.PREFERRED;
  *         double vs = 5;
  *         double vg = 10;
  *         double hg = 10;
- * <spc>
+ *
  *         double size[][] =
  *             {{b, f, hg, p, hg, p, b},
  *              {b, p, vs, p, vg, p, vs, p, vg, p, vs, p, vg, p, b}};
- * <spc>
+ *
  *         TableLayout layout = new TableLayout(size);
  *         pane.setLayout (layout);
- * <spc>
+ *
  *         // Create all controls
  *         JLabel labelName    = new JLabel("Name");
  *         JLabel labelAddress = new JLabel("Address");
  *         JLabel labelCity    = new JLabel("City");
  *         JLabel labelState   = new JLabel("State");
  *         JLabel labelZip     = new JLabel("Zip");
- * <spc>
+ *
  *         JTextField textfieldName    = new JTextField(10);
  *         JTextField textfieldAddress = new JTextField(20);
  *         JTextField textfieldCity    = new JTextField(10);
  *         JTextField textfieldState   = new JTextField(2);
  *         JTextField textfieldZip     = new JTextField(5);
- * <spc>
+ *
  *         JButton buttonOk = new JButton("OK");
  *         JButton buttonCancel = new JButton("Cancel");
  *         JPanel panelButton = new JPanel();
  *         panelButton.add(buttonOk);
  *         panelButton.add(buttonCancel);
- * <spc>
+ *
  *         // Add all controls
  *         pane.add(labelName,        "1,  1, 5, 1");
  *         pane.add(textfieldName,    "1,  3, 5, 3");
@@ -212,7 +212,7 @@ import java.util.ListIterator;
  *         pane.add(labelZip,         "5,  9");
  *         pane.add(textfieldZip,     "5, 11");
  *         pane.add(panelButton,      "1, 13, 5, 13");
- * <spc>
+ *
  *         pack();
  *         setResizable(false);
  *         show();
@@ -1061,6 +1061,7 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
    * Calculates the offset of each cr.
    *
    * @param z indicates row or column
+   * @param inset indicates cr offset
    */
   protected void calculateOffset(int z, Insets inset) {
     int numCr = crSpec[z].length;
@@ -1753,6 +1754,9 @@ public class TableLayout implements LayoutManager2, Serializable, TableLayoutCon
 
     /**
      * Copies this Entry.
+     *
+     * @return a copy of this instance
+     * @throws CloneNotSupportedException if the object's class does not support the {@code Cloneable} interface
      */
     public Object copy() throws CloneNotSupportedException {
       return clone();
