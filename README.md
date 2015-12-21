@@ -12,7 +12,7 @@ Maven coordinates:
     <dependency>
       <groupId>info.clearthought</groupId>
       <artifactId>table-layout</artifactId>
-      <version>4.2.2</version>
+      <version>4.3.0</version>
     </dependency>
 
 
