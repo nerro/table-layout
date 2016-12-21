@@ -1,11 +1,14 @@
 #################################
 # Compiled source               #
 #################################
-bin/
 build/
-dist/
-target/
-*.class
+
+#################################
+# Gradle files                  #
+#################################
+.gradle/
+!gradle-wrapper.jar
+gradle-app.setting
 
 #################################
 # IDE generated files           #

@@ -1,0 +1,9 @@
+include "layout"
+
+rootProject.name = "table-layout"
+rootProject.children.each { project ->
+  project.projectDir = new File(settingsDir, "subprojects/${project.name}")
+  project.buildFileName = "${project.name}.gradle"
+  assert project.projectDir.isDirectory()
+  assert project.buildFile.isFile()
+}

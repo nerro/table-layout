@@ -1,0 +1,19 @@
+allprojects {
+  group = "info.clearthought"
+  version = "4.3.1-SNAPSHOT"
+}
+
+subprojects {
+  apply plugin: "java"
+  apply from: "${rootDir}/gradle/compile.gradle"
+  apply from: "${rootDir}/gradle/dependencies.gradle"
+  apply from: "${rootDir}/gradle/versioning.gradle"
+
+  repositories {
+    jcenter()
+  }
+
+  version = rootProject.version
+
+  test.testLogging.setExceptionFormat("full")
+}

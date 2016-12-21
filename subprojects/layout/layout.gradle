@@ -1,0 +1,20 @@
+dependencies {
+  testCompile "${libraries.junit}"
+}
+
+tasks.withType(Jar) {
+  jar.baseName = rootProject.name
+}
+
+jar {
+  manifest {
+    attributes(
+      "Implementation-Title": "${project.name}",
+      "Implementation-Version": "${project.version}",
+      "Build-Revision": gitCommitHash,
+      "Build-Timestamp": buildTimestamp,
+      "Built-By": "nerro",
+      "GitHub-Url": "https://github.com/nerro/table-layout",
+    )
+  }
+}

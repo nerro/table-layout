@@ -1,0 +1,12 @@
+tasks.withType(JavaCompile) {
+  options.encoding = "utf-8"
+  options.compilerArgs = [
+    "-Xlint:cast",
+    "-Xlint:deprecation",
+    "-Xlint:empty",
+    "-Xlint:overrides",
+    "-Xlint:rawtypes",
+    "-Xlint:unchecked",
+    "-Xlint:varargs",
+  ]
+}
